@@ -92,7 +92,7 @@ st.text("")
 
 DATE_COLUMN='Close Date'
 df = shows[[DATE_COLUMN,'Amount']]
-df[DATE_COLUMN] = pd.to_datetime(df[DATE_COLUMN])
+df[DATE_COLUMN] = pd.to_datetime(df[DATE_COLUMN]).dt.year
 df = df.groupby('Close Date').sum()
 
 st.table(df)
