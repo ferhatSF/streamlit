@@ -90,7 +90,9 @@ st.text("")
 st.subheader("RAW data will appear below 👇 ")
 st.text("")
 
-df = shows('Close Date',['Amount'])
+DATE_COLUMN='Close Date'
+df = shows[[DATE_COLUMN,'Amount']]
+df[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN], format='%Y')
 df = df.groupby('Close Date').sum()
 
 st.table(df)
