@@ -90,9 +90,10 @@ st.text("")
 st.subheader("RAW data will appear below 👇 ")
 st.text("")
 
-df = shows.groupby('Close Date').sum()
+df = shows('Close Date',['Amount'])
+df = df.groupby('Close Date').sum()
 
-st.table(shows)
+st.table(df)
 
 st.text("")
 
