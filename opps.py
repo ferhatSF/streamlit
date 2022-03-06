@@ -96,11 +96,10 @@ shows=shows[shows['Stage'].str.contains("Won")]
 
 df = shows[[DATE_COLUMN,'Lead Source','Amount']]
 df[DATE_COLUMN] = pd.to_datetime(df[DATE_COLUMN]).dt.year
-df = df.groupby(['Close Date','Lead Source']).sum()
-
+df=pd.pivot_table(df, values='Amount', index=DATE_COLUMN,
+                    columns='Lead Source', aggfunc=np.sum)
 st.table(df)
-hist_values = np.histogram(df[DATE_COLUMN])[0]
-st.bar_chart(hist_values)
+st.bar_chart(df)
 
 st.text("")
 
