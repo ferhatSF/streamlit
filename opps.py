@@ -95,7 +95,7 @@ shows=shows[shows['Stage'].str.contains("Won")]
 
 df = shows[[DATE_COLUMN,'Lead Source','Amount']]
 df[DATE_COLUMN] = pd.to_datetime(df[DATE_COLUMN]).dt.year
-df = df.groupby('Close Date').sum()
+df = df.groupby(['Close Date','Lead Source']).sum()
 
 st.table(df)
 st.bar_chart(df)
