@@ -6,8 +6,6 @@ def func_jerk(x):
     jerk = 5*x
     return jerk
 
-st.snow
-
 st.title('Kaya Jerk: and Uber pickups in NYC')
 
 number = st.slider('Kaya Jerkiness Scale', min_value=0, max_value=20, step=5)
