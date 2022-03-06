@@ -95,8 +95,8 @@ DATE_COLUMN='Close Date'
 shows=shows[shows['Stage'].str.contains("Won")]
 
 shows = shows[[DATE_COLUMN,'Lead Source','Amount']]
-df[DATE_COLUMN] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
-shows=pd.pivot_table(df, values='Amount', index=DATE_COLUMN,
+shows[DATE_COLUMN] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
+shows=pd.pivot_table(shows, values='Amount', index=DATE_COLUMN,
                     columns='Lead Source', aggfunc=np.sum)
 st.table(shows)
 st.bar_chart(shows)
