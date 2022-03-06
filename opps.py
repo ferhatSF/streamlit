@@ -100,7 +100,7 @@ shows=pd.pivot_table(shows, values='Amount', index=DATE_COLUMN,
                     columns='Lead Source', aggfunc=np.sum)
 shows=shows.fillna(0)
 st.table(shows)
-st.bar_chart(shows)
+ax = shows.plot.bar(stacked=True)
 
 st.text("")
 
