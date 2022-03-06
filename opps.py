@@ -95,7 +95,6 @@ shows=shows[shows['Stage'].str.contains("Won")]
 
 df = shows[[DATE_COLUMN,'Lead Source','Amount']]
 df[DATE_COLUMN] = pd.to_datetime(df[DATE_COLUMN]).dt.year
-df=df[df['Stage'].str.contains("Won")]
 df = df.groupby('Close Date').sum()
 
 st.table(df)
