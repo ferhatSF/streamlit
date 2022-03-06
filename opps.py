@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import matplotlib
 
 ###################################
 from st_aggrid import AgGrid
@@ -101,7 +100,7 @@ shows=pd.pivot_table(shows, values='Amount', index=DATE_COLUMN,
                     columns='Lead Source', aggfunc=np.sum)
 shows=shows.fillna(0)
 st.table(shows)
-ax = shows.plot.bar(stacked=True)
+st.bar_chart(shows)
 
 st.text("")
 
