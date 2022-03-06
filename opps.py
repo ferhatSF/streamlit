@@ -87,6 +87,13 @@ st.table(df)
 
 st.text("")
 
+st.subheader("RAW data will appear below 👇 ")
+st.text("")
+
+st.table(shows)
+
+st.text("")
+
 c29, c30, c31 = st.columns([1, 1, 2])
 
 with c29:
