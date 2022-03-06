@@ -91,8 +91,9 @@ st.subheader("RAW data will appear below 👇 ")
 st.text("")
 
 DATE_COLUMN='Close Date'
-df = shows[[DATE_COLUMN,'Amount']]
+df = shows[[DATE_COLUMN,'Lead Source','Amount']]
 df[DATE_COLUMN] = pd.to_datetime(df[DATE_COLUMN]).dt.year
+df=df[df['Lead Source'].str.contains("Won")]
 df = df.groupby('Close Date').sum()
 
 st.table(df)
