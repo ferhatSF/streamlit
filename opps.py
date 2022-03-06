@@ -98,7 +98,8 @@ df[DATE_COLUMN] = pd.to_datetime(df[DATE_COLUMN]).dt.year
 df = df.groupby(['Close Date','Lead Source']).sum()
 
 st.table(df)
-st.bar_chart(df)
+hist_values = np.histogram(df[DATE_COLUMN])[0]
+st.bar_chart(hist_values)
 
 st.text("")
 
