@@ -98,6 +98,7 @@ df[DATE_COLUMN] = pd.to_datetime(df[DATE_COLUMN]).dt.year
 df = df.groupby('Close Date').sum()
 
 st.table(df)
+st.bar_chart(df)
 
 st.text("")
 
