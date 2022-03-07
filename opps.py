@@ -100,9 +100,9 @@ shows=pd.pivot_table(shows, values='Amount', index=DATE_COLUMN,
                     columns='Lead Source', aggfunc=np.sum)
 shows=shows.fillna(0)
 st.table(shows)
-st.bar_chart(shows['Partner Referral','Event'])
+st.bar_chart(shows['Partner Referral'])
 
-shows.columns
+st.write(shows.columns)
 
 chart_data = pd.DataFrame(
      np.random.randn(50, 3),
