@@ -104,11 +104,10 @@ df=pd.pivot_table(shows, values='Amount', index=DATE_COLUMN,
                     columns='Lead Source', aggfunc=np.sum)
 
 df=df.fillna(0)
-st.table(df)
 
 df = df.rename(columns={DATE_COLUMN:'index'}).set_index('index')
-
-st.bar_chart(df)
+st.table(df)
+#st.bar_chart(df)
 
 chart_data = pd.DataFrame(
      np.random.randn(50, 3),
