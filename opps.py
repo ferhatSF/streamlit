@@ -52,7 +52,7 @@ shows=shows[shows['Stage'].str.contains("Won")]
 
 shows['YEAR'] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
 shows['MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.month
-shows['YEAR-MONTH'] = shows['YEAR'] + "=" + shows['MONTH']
+shows['YEAR-MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.to_period('M')
 
 
 df=pd.pivot_table(shows, values='Amount', index=DATE_PLOT,
@@ -65,7 +65,7 @@ df.set_index(DATE_PLOT, inplace=True)
 s = df.sum()
 df=df[s.sort_values(ascending=False).index]
 st.bar_chart(df)
-st.write(df.columns)
+st.write(df.index)
 
 c29, c30, c31 = st.columns([1, 1, 2])
 
