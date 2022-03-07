@@ -95,7 +95,10 @@ df.columns.name = None
 df = df.reset_index()
 df.set_index('YEAR', inplace=True)
 s = df.sum()
+st.write(s)
+st.write(s.sort_values(ascenting=False.index)
 df=df[s.sort_values(ascending=False).index]
+st.write(df)
 st.bar_chart(df)
 
 
