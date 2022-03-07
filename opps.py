@@ -91,6 +91,9 @@ df=pd.pivot_table(shows, values='Amount', index='YEAR',
                     columns='Lead Source', aggfunc=np.sum)
 
 st.write(df)
+df.columns = df.columns.droplevel(0)
+df.columns.name = None
+df = df.reset_index()
 df
 #st.bar_chart(df)
 
