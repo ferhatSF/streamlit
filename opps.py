@@ -32,7 +32,8 @@ with c30:
 
         st.stop()
 
-
+dates = list(filter(lambda x: 'date' in x.lower(), shows.columns))
+st.write(dates)
         
 DATE_COLUMN = st.selectbox(
      'Pick the date column in your data?',
