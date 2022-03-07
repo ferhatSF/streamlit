@@ -115,7 +115,7 @@ chart_data = pd.DataFrame(
 
 st.bar_chart(chart_data)
 st.table(chart_data)
-st.write(chart_data.dtypes)
+chart_data.dtypes
 st.text("")
 
 c29, c30, c31 = st.columns([1, 1, 2])
