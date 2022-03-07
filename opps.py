@@ -94,7 +94,7 @@ st.write(df)
 df.columns.name = None
 df = df.reset_index()
 df
-#st.bar_chart(df)
+st.bar_chart(df)
 
 
 c29, c30, c31 = st.columns([1, 1, 2])
