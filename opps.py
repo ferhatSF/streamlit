@@ -107,7 +107,7 @@ df=df.fillna(0)
 
 #df = df.rename(columns={DATE_COLUMN:'index'}).set_index('index')
 st.table(df)
-#st.bar_chart(df)
+st.bar_chart(df)
 
 chart_data = pd.DataFrame(
      np.random.randn(50, 3),
