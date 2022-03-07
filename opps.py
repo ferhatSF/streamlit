@@ -91,13 +91,10 @@ df=pd.pivot_table(shows, values='Amount', index='YEAR',
 
 df=df.fillna(0)
 
-st.write(df.columns)
-
 df=df.reset_index()
-df=df[['Event','Partner Referral']]
 #df = df.rename(columns={DATE_COLUMN:'index'}).set_index('index')
 
-st.table(df['Lead Source')
+st.table(df['Lead Source'])
 
 st.write(df.columns)
 #st.bar_chart(df)
