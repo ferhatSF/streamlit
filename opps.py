@@ -67,8 +67,8 @@ s = df.sum()
 
 start_date, end_date = st.select_slider(
      'Select a range of dates',
-     options=df.index,
-st.write('You selected dates between', start_color, 'and', end_color)
+     options=df.index)
+st.write('You selected dates between', start_date, ' and ', end_date)
 
 st.bar_chart(df)
 st.write(df.index)
