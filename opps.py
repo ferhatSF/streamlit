@@ -39,7 +39,7 @@ DATE_COLUMN = st.selectbox(
      (shows.columns))
 
 PIVOT_COL = st.selectbox(
-     'Pick the date column in your data?',
+     'Pick the PIVOT column in your data?',
      (shows.columns))
 
 shows=shows[shows['Stage'].str.contains("Won")]
@@ -51,7 +51,7 @@ shows['MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.month
 shows = shows[['YEAR',PIVOT_COL,'Amount']]
 
 df=pd.pivot_table(shows, values='Amount', index='YEAR',
-                    columns=PIVOT_COL', aggfunc=np.sum)
+                    columns=PIVOT_COL, aggfunc=np.sum)
 
 st.write(df)
 df.columns.name = None
