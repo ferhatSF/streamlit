@@ -102,7 +102,7 @@ shows=shows.fillna(0)
 st.table(shows)
 st.bar_chart(shows['Partner Referral'])
 
-st.write(shows.columns)
+st.write(shows.info())
 
 chart_data = pd.DataFrame(
      np.random.randn(50, 3),
