@@ -55,7 +55,7 @@ shows['MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.month
 shows['YEAR-MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.to_period('M')
 
 
-df=pd.pivot_table(shows, values='Amount', index=DATE_PLOT',
+df=pd.pivot_table(shows, values='Amount', index=DATE_PLOT,
                     columns=PIVOT_COL, aggfunc=np.sum)
 
 st.write(df)
