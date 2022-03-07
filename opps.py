@@ -85,13 +85,13 @@ shows=shows[shows['Stage'].str.contains("Won")]
 shows = shows[[DATE_COLUMN,'Lead Source','Amount']]
 
 shows['YEAR'] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
+shows = shows[['YEAR','Lead Source','Amount']]
+#df=pd.pivot_table(shows, values='Amount', index='YEAR',
+#                    columns='Lead Source', aggfunc=np.sum)
 
-df=pd.pivot_table(shows, values='Amount', index='YEAR',
-                    columns='Lead Source', aggfunc=np.sum)
+grouped = shows.groupby('YEAR')
 
-df = shows.groupby('YEAR')
-
-st.write(df.columns)
+st.write(grouped.columns)
 
 #st.bar_chart(df['Partner Referral'])
 
