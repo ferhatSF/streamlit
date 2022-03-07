@@ -89,9 +89,10 @@ shows = shows[['YEAR','Lead Source','Amount']]
 #df=pd.pivot_table(shows, values='Amount', index='YEAR',
 #                    columns='Lead Source', aggfunc=np.sum)
 
-grouped = shows.groupby('YEAR')
+st.write(grouped)
+#grouped = shows.groupby('YEAR')
 
-st.write(grouped.columns)
+#st.write(grouped.columns)
 
 #st.bar_chart(df['Partner Referral'])
 
