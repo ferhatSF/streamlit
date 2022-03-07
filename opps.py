@@ -89,14 +89,7 @@ shows['YEAR'] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
 df=pd.pivot_table(shows, values='Amount', index='YEAR',
                     columns='Lead Source', aggfunc=np.sum)
 
-df=df.fillna(0)
-
-df=df.reset_index()
-#df = df.rename(columns={DATE_COLUMN:'index'}).set_index('index')
-
-st.table(df['Lead Source'])
-
-st.write(df.columns)
+st.write(df)
 #st.bar_chart(df)
 
 
