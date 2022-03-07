@@ -71,7 +71,7 @@ start_date, end_date = st.select_slider(
 
 st.write('You selected dates between', start_date, ' and ', end_date)
 
-st.bar_chart(df)
+st.bar_chart(df[startdate:end_date])
 st.write(df.index)
 
 c29, c30, c31 = st.columns([1, 1, 2])
