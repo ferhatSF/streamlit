@@ -89,8 +89,10 @@ shows['YEAR'] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
 df=pd.pivot_table(shows, values='Amount', index='YEAR',
                     columns='Lead Source', aggfunc=np.sum)
 
-st.write(df)
-st.bar_chart(df)
+st.write(df.columns)
+st.write(df.columns)
+
+st.bar_chart(df['Partner Referral'])
 
 
 c29, c30, c31 = st.columns([1, 1, 2])
