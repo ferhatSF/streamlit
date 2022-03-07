@@ -104,7 +104,7 @@ df=pd.pivot_table(shows, values='Amount',
                     columns='Lead Source', aggfunc=np.sum)
 
 df=df.fillna(0)
-
+st.write(df.dtypes)
 #df = df.rename(columns={DATE_COLUMN:'index'}).set_index('index')
 st.table(df)
 st.bar_chart(df)
@@ -115,6 +115,7 @@ chart_data = pd.DataFrame(
 
 st.bar_chart(chart_data)
 st.table(chart_data)
+st.write(chart_data.dtypes)
 st.text("")
 
 c29, c30, c31 = st.columns([1, 1, 2])
