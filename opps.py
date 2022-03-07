@@ -84,8 +84,6 @@ shows=shows[shows['Stage'].str.contains("Won")]
 
 shows = shows[[DATE_COLUMN,'Lead Source','Amount']]
 
-st.write(shows.columns)
-
 shows['YEAR'] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
 
 df=pd.pivot_table(shows, values='Amount', index='YEAR',
@@ -93,19 +91,16 @@ df=pd.pivot_table(shows, values='Amount', index='YEAR',
 
 #df=df.fillna(0)
 
+st.write(df.columns)
+
 df=df.reset_index()
+df=df[['Event','Partner Referral']]
 #df = df.rename(columns={DATE_COLUMN:'index'}).set_index('index')
 st.table(df)
+
+st.write(df.columns)
 #st.bar_chart(df)
 
-chart_data = pd.DataFrame(
-     np.random.randn(50, 3),
-     columns=["a", "b", "c"])
-
-st.bar_chart(chart_data)
-st.table(chart_data)
-chart_data.dtypes
-st.text("")
 
 c29, c30, c31 = st.columns([1, 1, 2])
 
