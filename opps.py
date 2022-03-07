@@ -55,7 +55,11 @@ DATE_PLOT = st.selectbox(
 picks=shows[FILTER_COL].unique()
 st.write(picks)
 
-shows=shows[shows['Stage'].str.contains("Won")]
+filters = ['Closed Won']
+
+shows = shows[shows[FILTER_COL].isin(filters)]
+
+#shows=shows[shows['Stage'].str.contains("Won")]
 
 shows['YEAR'] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
 shows['YEAR-MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.to_period('M')
