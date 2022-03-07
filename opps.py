@@ -42,21 +42,26 @@ PIVOT_COL = st.selectbox(
      'Pick the PIVOT column in your data?',
      (shows.columns))
 
+DATE_PLOT = st.selectbox(
+     'Pick the TIME for PLOTS in your data?',
+     ('YEAR','MONTH','YEAR-MONTH'))
+
 shows=shows[shows['Stage'].str.contains("Won")]
 
 #shows = shows[[DATE_COLUMN,'Lead Source','Amount']]
 
 shows['YEAR'] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
 shows['MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.month
-#shows = shows[['YEAR',PIVOT_COL,'Amount']]
+shows['YEAR-MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.to_period('M')
 
-df=pd.pivot_table(shows, values='Amount', index='YEAR',
+
+df=pd.pivot_table(shows, values='Amount', index=DATE_PLOT',
                     columns=PIVOT_COL, aggfunc=np.sum)
 
 st.write(df)
 df.columns.name = None
 df = df.reset_index()
-df.set_index('YEAR', inplace=True)
+df.set_index(DATE_PLOT, inplace=True)
 s = df.sum()
 df=df[s.sort_values(ascending=False).index]
 st.bar_chart(df)
