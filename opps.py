@@ -33,7 +33,13 @@ with c30:
         st.stop()
 
 dates = list(filter(lambda x: 'date' in x.lower(), shows.columns))
+no_dates = list(filter(lambda x: 'date' not in x.lower(), shows.columns))
         
+    
+FILTER_COL = st.selectbox(
+     'Pick the filter column in your data?',
+     (no_dates))
+
 DATE_COLUMN = st.selectbox(
      'Pick the date column in your data?',
      (dates))
