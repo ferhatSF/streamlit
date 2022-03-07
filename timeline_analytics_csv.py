@@ -21,6 +21,8 @@ st.set_page_config(page_icon="💲", page_title="PULSE REPORT: OPPS")
 
 st.title("CVS Timeline Data Analytics")
 
+sample_file="https://raw.githubusercontent.com/ferhatSF/sample-data/eab1d66e5e89f232d038e7e856a6c346a8b6c9ce/Sample-Timeline-Analytics.csv"
+
 c29, c30, c31 = st.columns([1, 6, 1])
 
 with c30:
@@ -38,11 +40,7 @@ with c30:
         file_container.write(shows)
 
     else:
-        st.info(
-            f"""
-                👆 Upload a .csv file first. Sample to try: [Sample-Timeline-Analytics.csv](https://raw.githubusercontent.com/ferhatSF/sample-data/eab1d66e5e89f232d038e7e856a6c346a8b6c9ce/Sample-Timeline-Analytics.csv)
-                """
-        )
+        st.info("👆 Upload a .csv file first. Sample to try: Sample-Timeline-Analytics.csv )
 
         st.stop()
 
