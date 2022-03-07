@@ -35,7 +35,7 @@ with c30:
     st.info("👆 Upload a .csv file here. Sample to try: Sample-Timeline-Analytics.csv" )
 
     if uploaded_file is not None:
-        uploaded_file=samplefile
+        uploaded_file=sample_file
         file_container = st.expander("Check your Timeline data .csv")
         shows = pd.read_csv(uploaded_file)
         uploaded_file.seek(0)
