@@ -52,7 +52,7 @@ DATE_PLOT = st.selectbox(
      'Pick the TIME for PLOTS in your data?',
      ('YEAR','YEAR-MONTH'))
 
-picks=shows.FILTER_COL.unique()
+picks=shows[FILTER_COL].unique()
 st.write(picks)
 
 shows=shows[shows['Stage'].str.contains("Won")]
