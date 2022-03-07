@@ -103,7 +103,7 @@ st.write(df.info())
 
 df=df.fillna(0)
 st.table(df)
-st.bar_chart(df)
+#st.bar_chart(df)
 
 st.write(df.columns)
 
