@@ -33,11 +33,10 @@ with c30:
         st.stop()
 
 dates = list(filter(lambda x: 'date' in x.lower(), shows.columns))
-st.write(dates)
         
 DATE_COLUMN = st.selectbox(
      'Pick the date column in your data?',
-     (shows.columns))
+     (dates))
 
 PIVOT_COL = st.selectbox(
      'Pick the PIVOT column in your data?',
