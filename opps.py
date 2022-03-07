@@ -100,7 +100,7 @@ shows=pd.pivot_table(shows, values='Amount', index=DATE_COLUMN,
                     columns='Lead Source', aggfunc=np.sum)
 shows=shows.fillna(0)
 st.table(shows)
-st.bar_chart(shows['Partner Referral')
+st.bar_chart(shows['Partner Referral'])
 
 st.text("")
 
