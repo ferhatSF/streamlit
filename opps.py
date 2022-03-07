@@ -57,6 +57,10 @@ st.write(picks)
 
 filters = ['Closed Won']
 
+filters = st.multiselect(
+     'Chose the values to include?',
+     picks)
+
 shows = shows[shows[FILTER_COL].isin(filters)]
 
 #shows=shows[shows['Stage'].str.contains("Won")]
