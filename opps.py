@@ -94,6 +94,8 @@ st.write(shows)
 grouped = shows.groupby('YEAR')
 st.write(grouped)
 
+df=grouped
+
 #st.write(grouped.columns)
 
 #st.bar_chart(df['Partner Referral'])
