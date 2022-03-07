@@ -38,18 +38,20 @@ DATE_COLUMN = st.selectbox(
      'Pick the date column in your data?',
      (shows.columns))
 
-st.write('You selected:', DATE_COLUMN)
+PIVOT_COL = st.selectbox(
+     'Pick the date column in your data?',
+     (shows.columns))
 
-#DATE_COLUMN='Close Date'
 shows=shows[shows['Stage'].str.contains("Won")]
 
 shows = shows[[DATE_COLUMN,'Lead Source','Amount']]
 
 shows['YEAR'] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
-shows = shows[['YEAR','Lead Source','Amount']]
+shows['MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.month
+shows = shows[['YEAR',PIVOT_COL,'Amount']]
 
 df=pd.pivot_table(shows, values='Amount', index='YEAR',
-                    columns='Lead Source', aggfunc=np.sum)
+                    columns=PIVOT_COL', aggfunc=np.sum)
 
 st.write(df)
 df.columns.name = None
