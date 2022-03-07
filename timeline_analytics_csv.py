@@ -21,7 +21,7 @@ st.set_page_config(page_icon="💲", page_title="PULSE REPORT: OPPS")
 
 st.title("CVS Timeline Data Analytics")
 
-sample_file="https://raw.githubusercontent.com/ferhatSF/sample-data/eab1d66e5e89f232d038e7e856a6c346a8b6c9ce/Sample-Timeline-Analytics.csv"
+sample_file="https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv"
 
 c29, c30, c31 = st.columns([1, 6, 1])
 
@@ -33,7 +33,7 @@ with c30:
         help="To activate 'wide mode', go to the hamburger menu > Settings > turn on 'wide mode'",
     )
     st.info("👆 Upload a .csv file here. Sample to try: Sample-Timeline-Analytics.csv " + sample_file )
-
+    st.download_button('Download CSV', sample_file, 'text/csv')   
     if uploaded_file is not None:
         file_container = st.expander("Check your Timeline data .csv")
         shows = pd.read_csv(uploaded_file)
