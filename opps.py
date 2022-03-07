@@ -44,11 +44,11 @@ PIVOT_COL = st.selectbox(
 
 shows=shows[shows['Stage'].str.contains("Won")]
 
-shows = shows[[DATE_COLUMN,'Lead Source','Amount']]
+#shows = shows[[DATE_COLUMN,'Lead Source','Amount']]
 
 shows['YEAR'] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
 shows['MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.month
-shows = shows[['YEAR',PIVOT_COL,'Amount']]
+#shows = shows[['YEAR',PIVOT_COL,'Amount']]
 
 df=pd.pivot_table(shows, values='Amount', index='YEAR',
                     columns=PIVOT_COL, aggfunc=np.sum)
