@@ -34,13 +34,13 @@ with c30:
 
 
         
-option = st.selectbox(
+DATE_COLUMN = st.selectbox(
      'Pick the date column in your data?',
      (shows.columns))
 
 st.write('You selected:', option)
 
-DATE_COLUMN='Close Date'
+#DATE_COLUMN='Close Date'
 shows=shows[shows['Stage'].str.contains("Won")]
 
 shows = shows[[DATE_COLUMN,'Lead Source','Amount']]
