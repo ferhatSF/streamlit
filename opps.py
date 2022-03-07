@@ -48,8 +48,6 @@ DATE_PLOT = st.selectbox(
 
 shows=shows[shows['Stage'].str.contains("Won")]
 
-#shows = shows[[DATE_COLUMN,'Lead Source','Amount']]
-
 shows['YEAR'] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
 shows['YEAR-MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.to_period('M')
 
@@ -63,7 +61,6 @@ df.set_index(DATE_PLOT, inplace=True)
 df.index=df.index.to_series().astype(str)
 
 s = df.sum()
-#df=df[s.sort_values(ascending=False).index]
 
 start_date, end_date = st.select_slider(
      'Select a range of dates',
@@ -71,7 +68,7 @@ start_date, end_date = st.select_slider(
 
 st.write('You selected dates between', start_date, ' and ', end_date)
 
-st.bar_chart(df[startdate:end_date])
+st.bar_chart(df[start_date:end_date])
 st.write(df.index)
 
 c29, c30, c31 = st.columns([1, 1, 2])
