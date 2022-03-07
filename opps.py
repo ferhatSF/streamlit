@@ -96,13 +96,13 @@ shows=shows[shows['Stage'].str.contains("Won")]
 
 shows = shows[[DATE_COLUMN,'Lead Source','Amount']]
 shows[DATE_COLUMN] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
-shows=pd.pivot_table(shows, values='Amount', index=DATE_COLUMN,
+df=pd.pivot_table(shows, values='Amount', index=DATE_COLUMN,
                     columns='Lead Source', aggfunc=np.sum)
-shows=shows.fillna(0)
-st.table(shows)
-st.bar_chart(shows['Partner Referral'])
+df=df.fillna(0)
+st.table(df)
+st.bar_chart(df['Partner Referral'])
 
-st.write(shows.info())
+st.write(df.info())
 
 chart_data = pd.DataFrame(
      np.random.randn(50, 3),
