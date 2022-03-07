@@ -38,7 +38,7 @@ DATE_COLUMN = st.selectbox(
      'Pick the date column in your data?',
      (shows.columns))
 
-st.write('You selected:', option)
+st.write('You selected:', DATE_COLUMN)
 
 #DATE_COLUMN='Close Date'
 shows=shows[shows['Stage'].str.contains("Won")]
