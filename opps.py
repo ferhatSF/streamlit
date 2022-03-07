@@ -98,6 +98,9 @@ shows = shows[[DATE_COLUMN,'Lead Source','Amount']]
 shows[DATE_COLUMN] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
 df=pd.pivot_table(shows, values='Amount', index=DATE_COLUMN,
                     columns='Lead Source', aggfunc=np.sum)
+
+df.info()
+
 df=df.fillna(0)
 st.table(df)
 st.bar_chart(df)
