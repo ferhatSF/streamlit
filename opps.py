@@ -55,20 +55,6 @@ with c30:
 
         st.stop()
 
-from st_aggrid import GridUpdateMode, DataReturnMode
-
-gb = GridOptionsBuilder.from_dataframe(shows)
-# enables pivoting on all columns, however i'd need to change ag grid to allow export of pivoted/grouped data, however it select/filters groups
-gb.configure_default_column(enablePivot=True, enableValue=True, enableRowGroup=True)
-gb.configure_selection(selection_mode="multiple", use_checkbox=True)
-gb.configure_side_bar()  # side_bar is clearly a typo :) should by sidebar
-gridOptions = gb.build()
-
-st.success(
-    f"""
-        💡 Tip! Hold the shift key when selecting rows to select multiple rows at once!
-        """
-)
 
 DATE_COLUMN='Close Date'
 shows=shows[shows['Stage'].str.contains("Won")]
