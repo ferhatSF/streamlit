@@ -26,8 +26,6 @@ sample_file="https://raw.githubusercontent.com/ferhatSF/sample-data/eab1d66e5e89
 c29, c30, c31 = st.columns([1, 6, 1])
 
 with c30:
-
-    uploaded_file=sample_file
     
     uploaded_file = st.file_uploader(
         "",
@@ -37,6 +35,7 @@ with c30:
     st.info("👆 Upload a .csv file here. Sample to try: Sample-Timeline-Analytics.csv" )
 
     if uploaded_file is not None:
+        uploaded_file=samplefile
         file_container = st.expander("Check your Timeline data .csv")
         shows = pd.read_csv(uploaded_file)
         uploaded_file.seek(0)
