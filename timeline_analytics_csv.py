@@ -40,7 +40,7 @@ with c30:
         file_container.write(shows)
 
     else:
-        st.info("👆 Upload a .csv file first. Sample to try: Sample-Timeline-Analytics.csv )
+        st.info("👆 Upload a .csv file first. Sample to try: Sample-Timeline-Analytics.csv" )
 
         st.stop()
 
