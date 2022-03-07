@@ -44,14 +44,13 @@ PIVOT_COL = st.selectbox(
 
 DATE_PLOT = st.selectbox(
      'Pick the TIME for PLOTS in your data?',
-     ('YEAR','MONTH','YEAR-MONTH'))
+     ('YEAR','YEAR-MONTH'))
 
 shows=shows[shows['Stage'].str.contains("Won")]
 
 #shows = shows[[DATE_COLUMN,'Lead Source','Amount']]
 
 shows['YEAR'] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
-shows['MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.month
 shows['YEAR-MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.to_period('M')
 
 df=pd.pivot_table(shows, values='Amount', index=DATE_PLOT,
@@ -65,6 +64,12 @@ df.index=df.index.to_series().astype(str)
 
 s = df.sum()
 #df=df[s.sort_values(ascending=False).index]
+
+start_date, end_date = st.select_slider(
+     'Select a range of dates',
+     options=df.index,
+st.write('You selected dates between', start_color, 'and', end_color)
+
 st.bar_chart(df)
 st.write(df.index)
 
