@@ -69,7 +69,7 @@ st.write('You selected dates between', start_date, ' and ', end_date)
 
 st.bar_chart(df[start_date:end_date])
 
-st.write(df[start_date:end_date]))
+st.write(df[start_date:end_date])
 
 c29, c30, c31 = st.columns([1, 1, 2])
 
