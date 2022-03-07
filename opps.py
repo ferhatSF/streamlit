@@ -52,7 +52,7 @@ shows=shows[shows['Stage'].str.contains("Won")]
 
 shows['YEAR'] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
 shows['MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.month
-shows['YEAR-MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.to_period('M').strftime('%Y-%m')
+shows['YEAR-MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).strftime('%Y-%m')
 
 
 df=pd.pivot_table(shows, values='Amount', index=DATE_PLOT,
