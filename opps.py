@@ -70,15 +70,6 @@ st.success(
         """
 )
 
-response = AgGrid(
-    shows,
-    gridOptions=gridOptions,
-    enable_enterprise_modules=True,
-    update_mode=GridUpdateMode.MODEL_CHANGED,
-    data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
-    fit_columns_on_grid_load=False,
-)
-
 DATE_COLUMN='Close Date'
 shows=shows[shows['Stage'].str.contains("Won")]
 
