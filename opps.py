@@ -26,7 +26,7 @@ with c30:
     else:
         st.info(
             f"""
-                👆 Upload a .csv file first. Sample to try: [biostats.csv](https://people.sc.fsu.edu/~jburkardt/data/csv/biostats.csv)
+                👆 Upload a .csv file first. Sample to try: [Sample-CSV-Timeline-Data.csv](https://github.com/ferhatSF/sample-data/blob/main/Sample%20CSV%20Pipeline%20-%20Sheet1.csv)
                 """
         )
 
