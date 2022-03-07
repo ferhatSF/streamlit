@@ -53,7 +53,6 @@ DATE_PLOT = st.selectbox(
      ('YEAR','YEAR-MONTH'))
 
 picks=shows[FILTER_COL].unique()
-st.write(picks)
 
 filters = ['Closed Won']
 
