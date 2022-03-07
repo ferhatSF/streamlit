@@ -4,7 +4,7 @@ import pandas as pd
 
 from functionforDownloadButtons import download_button
 
-st.set_page_config(page_icon="✂️", page_title="PULSE REPORT: OPPS")
+st.set_page_config(page_icon="💲", page_title="PULSE REPORT: OPPS")
 
 
 c29, c30, c31 = st.columns([1, 6, 1])
