@@ -34,11 +34,6 @@ with c30:
 
 dates = list(filter(lambda x: 'date' in x.lower(), shows.columns))
 no_dates = list(filter(lambda x: 'date' not in x.lower(), shows.columns))
-        
-    
-FILTER_COL = st.selectbox(
-     'Pick the filter column in your data?',
-     (no_dates))
 
 DATE_COLUMN = st.selectbox(
      'Pick the date column in your data?',
@@ -51,6 +46,10 @@ PIVOT_COL = st.selectbox(
 DATE_PLOT = st.selectbox(
      'Pick the TIME for PLOTS in your data?',
      ('YEAR','YEAR-MONTH'))
+    
+FILTER_COL = st.selectbox(
+     'Pick the filter column in your data?',
+     (no_dates))
 
 picks=shows[FILTER_COL].unique()
 
