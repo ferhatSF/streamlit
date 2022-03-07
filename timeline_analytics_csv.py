@@ -4,8 +4,22 @@ import pandas as pd
 
 from functionforDownloadButtons import download_button
 
+def _max_width_():
+    max_width_str = f"max-width: 1800px;"
+    st.markdown(
+        f"""
+    <style>
+    .reportview-container .main .block-container{{
+        {max_width_str}
+    }}
+    </style>    
+    """,
+        unsafe_allow_html=True,
+    )
+    
 st.set_page_config(page_icon="💲", page_title="PULSE REPORT: OPPS")
 
+st.title("CVS Timeline Data Analytics")
 
 c29, c30, c31 = st.columns([1, 6, 1])
 
