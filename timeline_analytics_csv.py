@@ -32,10 +32,9 @@ with c30:
         key="1",
         help="To activate 'wide mode', go to the hamburger menu > Settings > turn on 'wide mode'",
     )
-    st.info("👆 Upload a .csv file here. Sample to try: Sample-Timeline-Analytics.csv" )
+    st.info("👆 Upload a .csv file here. Sample to try: Sample-Timeline-Analytics.csv ", sample_file )
 
     if uploaded_file is not None:
-        uploaded_file=sample_file
         file_container = st.expander("Check your Timeline data .csv")
         shows = pd.read_csv(uploaded_file)
         uploaded_file.seek(0)
