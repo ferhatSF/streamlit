@@ -33,6 +33,13 @@ with c30:
         st.stop()
 
 
+        
+option = st.selectbox(
+     'Pick the date column in your data?',
+     (shows.columns))
+
+st.write('You selected:', option)
+
 DATE_COLUMN='Close Date'
 shows=shows[shows['Stage'].str.contains("Won")]
 
