@@ -93,6 +93,7 @@ df=pd.pivot_table(shows, values='Amount', index='YEAR',
 
 #df=df.fillna(0)
 
+df=df.reset_index()
 #df = df.rename(columns={DATE_COLUMN:'index'}).set_index('index')
 st.table(df)
 #st.bar_chart(df)
