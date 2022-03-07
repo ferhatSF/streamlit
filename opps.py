@@ -79,34 +79,22 @@ response = AgGrid(
     fit_columns_on_grid_load=False,
 )
 
-df = pd.DataFrame(response["selected_rows"])
-
-st.subheader("Filtered data will appear below 👇 ")
-st.text("")
-
-st.table(df)
-
-st.text("")
-
-st.subheader("RAW data will appear below 👇 ")
-st.text("")
-
 DATE_COLUMN='Close Date'
 shows=shows[shows['Stage'].str.contains("Won")]
 
 shows = shows[[DATE_COLUMN,'Lead Source','Amount']]
 
-st.write(df.columns)
+st.write(shows.columns)
 
-shows[DATE_COLUMN] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
+shows['YEAR'] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
 
-df=pd.pivot_table(shows, values='Amount',
+df=pd.pivot_table(shows, values='Amount', index='YEAR',
                     columns='Lead Source', aggfunc=np.sum)
 
 #df=df.fillna(0)
-#st.write(df.dtypes)
+
 #df = df.rename(columns={DATE_COLUMN:'index'}).set_index('index')
-#st.table(df)
+st.table(df)
 #st.bar_chart(df)
 
 chart_data = pd.DataFrame(
