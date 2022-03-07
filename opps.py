@@ -64,7 +64,7 @@ df.set_index(DATE_PLOT, inplace=True)
 df.index=df.index.to_series().astype(str)
 
 s = df.sum()
-df=df[s.sort_values(ascending=False).index]
+#df=df[s.sort_values(ascending=False).index]
 st.bar_chart(df)
 st.write(df.index)
 
