@@ -56,7 +56,7 @@ with c30:
 #        st.stop()
 
 shows=pd.read_csv(data_file)
-uploaded_file.seek(0)
+data_file.seek(0)
 file_container = st.expander("Check your Timeline data .csv")
 file_container.write(shows)
         
