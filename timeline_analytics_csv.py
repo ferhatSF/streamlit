@@ -52,7 +52,7 @@ no_dates = list(filter(lambda x: 'date' not in x.lower(), shows.columns))
 
 VAL_COL = st.selectbox(
      'Pick the VALUE column for PLOTS in your data?',
-     (no_dates))
+     (no_dates),no_dates[0])
     
 DATE_COL = st.selectbox(
      'Pick the date column in your data?',
