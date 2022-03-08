@@ -45,7 +45,7 @@ with c30:
                 Date, Field1, Field2, Value
                 1/1/2022, Ferhat, Hatay, 100
                 """
-        st.code(f"""    
+        st.code("""    
                 Date, Field1, Field2, Value
                 1/1/2022, Ferhat, Hatay, 100
                 """)
