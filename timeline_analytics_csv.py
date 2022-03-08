@@ -35,7 +35,6 @@ with c30:
     st.info(
          f"""
                 👆 Upload your own .csv file.
-                
                 The CSV file should include one date field with 'Date' in the name amd one value field with all numeric values.
                 """
     )
@@ -43,7 +42,7 @@ with c30:
                 Date, Field1, Field2, Value
                 1/1/2022, Ferhat, Hatay, 100.00
                 """
-    st.code(example_code,language='csv')
+    st.code(example_code,language='text')
 
     if uploaded_file is not None:
         shows = pd.read_csv(uploaded_file)
