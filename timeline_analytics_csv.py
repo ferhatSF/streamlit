@@ -45,7 +45,7 @@ with c30:
     st.code(example_code,language='text')
 
     if uploaded_file is not None:
-        data_file=updated_file
+        data_file=uploaded_file
     else:
         st.info(
              f"""
