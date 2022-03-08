@@ -32,7 +32,7 @@ with c30:
         key="1",
         help="To activate 'wide mode', go to the hamburger menu > Settings > turn on 'wide mode'",
     )
-    st.info("👆 Upload a .csv file here. Download the sample: [Sample_Timeline.csv] (https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv)")
+    st.info("👆 Upload a .csv file here. Download the sample: [Sample_Timeline.csv](https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv)")
     if uploaded_file is not None:
         file_container = st.expander("Check your Timeline data .csv")
         shows = pd.read_csv(uploaded_file)
