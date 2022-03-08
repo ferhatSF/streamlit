@@ -22,11 +22,6 @@ st.set_page_config(page_icon="💲", page_title="PULSE REPORT: OPPS")
 st.title("CVS Timeline Data Analytics")
 
 sample_file="https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv"
-shows = pd.read_csv(sample_file)
-DATE_COLUMN="Close Date"
-PIVOT_COL="Lead Source"
-FILTER_COL="Stage"
-filters=["Won"]
 
 c29, c30, c31 = st.columns([1, 6, 1])
 
@@ -50,7 +45,11 @@ with c30:
 dates = list(filter(lambda x: 'date' in x.lower(), shows.columns))
 no_dates = list(filter(lambda x: 'date' not in x.lower(), shows.columns))
 
-DATE_COLUMN = st.selectbox(
+VAL_COL = st.selectbox(
+     'Pick the VALUE column for PLOTS in your data?',
+     (no_dates))
+    
+DATE_COL = st.selectbox(
      'Pick the date column in your data?',
      (dates))
 
@@ -76,10 +75,8 @@ filters = st.multiselect(
 
 shows = shows[shows[FILTER_COL].isin(filters)]
 
-#shows=shows[shows['Stage'].str.contains("Won")]
-
-shows['YEAR'] = pd.to_datetime(shows[DATE_COLUMN]).dt.year
-shows['YEAR-MONTH'] = pd.to_datetime(shows[DATE_COLUMN]).dt.to_period('M')
+shows['YEAR'] = pd.to_datetime(shows[DATE_COL]).dt.year
+shows['YEAR-MONTH'] = pd.to_datetime(shows[DATE_CO]).dt.to_period('M')
 
 df=pd.pivot_table(shows, values='Amount', index=DATE_PLOT,
                     columns=PIVOT_COL, aggfunc=np.sum)
