@@ -47,12 +47,15 @@ with c30:
     else:
         st.stop()
 
+numerics = ['int16', 'int32', 'int64', 'float16', 'float32', 'float64']
+
+nums = df.select_dtypes(include=numerics).columns
 dates = list(filter(lambda x: 'date' in x.lower(), shows.columns))
 no_dates = list(filter(lambda x: 'date' not in x.lower(), shows.columns))
 
 VAL_COL = st.selectbox(
      'Pick the VALUE column for PLOTS in your data?',
-     (no_dates),0)
+     (nums),0)
     
 DATE_COL = st.selectbox(
      'Pick the date column in your data?',
