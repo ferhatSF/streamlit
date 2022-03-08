@@ -33,7 +33,7 @@ with c30:
         help="To activate 'wide mode', go to the hamburger menu > Settings > turn on 'wide mode'",
     )
     st.info(
-         f'<a href="data:file/csv;base64,{b64}" download="https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv">👆 Upload a .csv file first. Sample to try: </a>'
+         f'<a href="data:file/csv" download="https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv">👆 Upload a .csv file first. Sample to try: </a>'
          f"""
                 👆 Upload a .csv file first. Sample to try: [Sample_Timeline.csv](https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv)
                 """
