@@ -19,7 +19,7 @@ def _max_width_():
     
 st.set_page_config(page_icon="💲", page_title="PULSE REPORT: OPPS")
 
-st.title("CVS Timeline Data Analytics")
+st.title("Timeline Data Analytics")
 
 sample_file="https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv"
 
