@@ -23,6 +23,10 @@ st.title("CVS Timeline Data Analytics")
 
 sample_file="https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv"
 shows = pd.read_csv(sample_file)
+DATE_COLUMN="Close Date"
+PIVOT_COL="Lead Source"
+FILTER_COL="Stage"
+filters=["Won"]
 
 c29, c30, c31 = st.columns([1, 6, 1])
 
