@@ -40,8 +40,9 @@ with c30:
     )
     
     st.write(pd.DataFrame({
-     'first column': ['Date','Field1' , 'Field2', 'Value'],
-     'second column': ['2/2/2022', 'Ferhat', 'Hatay', 100.00],
+     'Date': ['2/22/2022','3/3/3033'],
+     'Name': ['Ferhat', 'Hatay'],
+     'Value': [100,100],
     }))
 
     if uploaded_file is not None:
