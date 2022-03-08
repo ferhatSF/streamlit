@@ -40,7 +40,16 @@ with c30:
                 Date, Field1, Field2, Value
                 1/1/2022, Ferhat, Hatay, 100
                 """
-        )
+        f"""    
+                The CSV file should include one date field with 'Date' in the name amd one value field with all numeric values.
+                Date, Field1, Field2, Value
+                1/1/2022, Ferhat, Hatay, 100
+                """
+        st.code(f"""    
+                Date, Field1, Field2, Value
+                1/1/2022, Ferhat, Hatay, 100
+                """)
+    )
 
     if uploaded_file is not None:
         shows = pd.read_csv(uploaded_file)
