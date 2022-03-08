@@ -75,7 +75,7 @@ picks=shows[FILTER_COL].unique()
 
 filters = st.multiselect(
      'Chose the values to include?',
-     picks,0)
+     picks,picks)
 
 shows = shows[shows[FILTER_COL].isin(filters)]
 
