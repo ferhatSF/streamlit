@@ -47,8 +47,6 @@ with c30:
     else:
         st.stop()
 
-numerics = ['int16', 'int32', 'int64', 'float16', 'float32', 'float64']
-
 nums=shows.select_dtypes(include=np.number).columns.tolist()
 dates = list(filter(lambda x: 'date' in x.lower(), shows.columns))
 no_dates = list(filter(lambda x: 'date' not in x.lower(), shows.columns))
@@ -77,10 +75,9 @@ picks=shows[FILTER_COL].unique()
 
 filters = st.multiselect(
      'Chose the values to include?',
-     picks)
+     picks,0)
 
-if filters is not None:
-    shows = shows[shows[FILTER_COL].isin(filters)]
+shows = shows[shows[FILTER_COL].isin(filters)]
 
 shows['YEAR'] = pd.to_datetime(shows[DATE_COL]).dt.year
 shows['YEAR-MONTH'] = pd.to_datetime(shows[DATE_COL]).dt.to_period('M')
