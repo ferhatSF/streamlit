@@ -45,7 +45,9 @@ with c30:
         file_container.write(shows)
 
     else:
-        st.stop()
+        file_container = st.expander("Check your Timeline data .csv")
+        shows=pd.read_csv(sample_file)
+#        st.stop()
 
 nums=shows.select_dtypes(include=np.number).columns.tolist()
 dates = list(filter(lambda x: 'date' in x.lower(), shows.columns))
