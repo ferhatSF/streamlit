@@ -76,7 +76,7 @@ filters = st.multiselect(
 shows = shows[shows[FILTER_COL].isin(filters)]
 
 shows['YEAR'] = pd.to_datetime(shows[DATE_COL]).dt.year
-shows['YEAR-MONTH'] = pd.to_datetime(shows[DATE_CO]).dt.to_period('M')
+shows['YEAR-MONTH'] = pd.to_datetime(shows[DATE_COL]).dt.to_period('M')
 
 df=pd.pivot_table(shows, values='Amount', index=DATE_PLOT,
                     columns=PIVOT_COL, aggfunc=np.sum)
