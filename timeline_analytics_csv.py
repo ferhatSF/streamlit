@@ -67,20 +67,18 @@ FILTER_COL = st.selectbox(
 
 picks=shows[FILTER_COL].unique()
 
-filters = ['Closed Won']
-
 filters = st.multiselect(
      'Chose the values to include?',
      picks)
 
-shows = shows[shows[FILTER_COL].isin(filters)]
+if filters is not None:
+    shows = shows[shows[FILTER_COL].isin(filters)]
 
 shows['YEAR'] = pd.to_datetime(shows[DATE_COL]).dt.year
 shows['YEAR-MONTH'] = pd.to_datetime(shows[DATE_COL]).dt.to_period('M')
 
-df=pd.pivot_table(shows, values='Amount', index=DATE_PLOT,
+df=pd.pivot_table(shows, values=VAL_COL, index=DATE_PLOT,
                     columns=PIVOT_COL, aggfunc=np.sum)
-
 df.columns.name = None
 df = df.reset_index()
 df.set_index(DATE_PLOT, inplace=True)
