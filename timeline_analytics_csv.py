@@ -35,7 +35,7 @@ with c30:
     st.info(
                 f"""
                 👆 Upload your own .csv file.
-                The CSV file should include one date field with 'Date' in the name amd one value field with all numeric values.
+                The CSV file should include one date field with 'Date' in the name and one value field with all numeric values.
                 """
     )
     
@@ -64,11 +64,6 @@ if uploaded_file is not None:
     file_container = st.expander("Check your Timeline data .csv")
     file_container.write(shows)
 else:
-    st.info(
-         f"""
-            Sample data set: [Sample_Timeline.csv](https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv)
-            """
-        )
     data_file=sample_file
     shows=pd.read_csv(data_file)
     
