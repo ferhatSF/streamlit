@@ -38,14 +38,18 @@ with c30:
                 """
         )
 
+    file_container = st.expander("Check your Timeline data .csv")
+
     if uploaded_file is not None:
-        file_container = st.expander("Check your Timeline data .csv")
         shows = pd.read_csv(uploaded_file)
         uploaded_file.seek(0)
         file_container.write(shows)
-
     else:
-        file_container = st.expander("Check your Timeline data .csv")
+        st.info(
+             f"""
+                Sample data set shown: [Sample_Timeline.csv](https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv)
+                """
+            )
         shows=pd.read_csv(sample_file)
 #        st.stop()
 
