@@ -35,6 +35,10 @@ with c30:
     st.info(
          f"""
                 👆 Upload your own .csv file.
+                
+                The CSV file should include one date field with 'Date' in the name amd one value field with all numeric values.
+                Date, Field1, Field2, Value
+                1/1/2022, Ferhat, Hatay, 100
                 """
         )
 
