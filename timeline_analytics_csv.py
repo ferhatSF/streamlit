@@ -34,7 +34,7 @@ with c30:
     )
     st.info(
          f"""
-                👆 Upload a .csv file first. Sample to try: [Sample_Timeline.csv](https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv)
+                👆 Upload your own .csv file. Sample data set shown: [Sample_Timeline.csv](https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv)
                 """
         )
 
