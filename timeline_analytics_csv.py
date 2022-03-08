@@ -45,16 +45,17 @@ with c30:
     st.code(example_code,language='text')
 
     if uploaded_file is not None:
-        shows = pd.read_csv(uploaded_file)
+        data_file=updated_file
     else:
         st.info(
              f"""
                 Sample data set: [Sample_Timeline.csv](https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv)
                 """
             )
-        shows=pd.read_csv(sample_file)
+        data_file=sample_file
 #        st.stop()
 
+shows=pd.read_csv(data_file)
 uploaded_file.seek(0)
 file_container = st.expander("Check your Timeline data .csv")
 file_container.write(shows)
