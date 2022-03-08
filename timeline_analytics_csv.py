@@ -55,6 +55,16 @@ with c30:
         data_file=sample_file
 #        st.stop()
 
+
+if uploaded_file is not None:
+    data_file=uploaded_file
+else:
+    st.info(
+         f"""
+            Sample data set: [Sample_Timeline.csv](https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv)
+            """
+        )
+    data_file=sample_file
 shows=pd.read_csv(data_file)
 data_file.seek(0)
 file_container = st.expander("Check your Timeline data .csv")
