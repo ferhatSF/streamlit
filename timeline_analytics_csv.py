@@ -38,11 +38,11 @@ with c30:
                 The CSV file should include one date field with 'Date' in the name amd one value field with all numeric values.
                 """
     )
-    example_code="""    
-                Date, Field1, Field2, Value
-                1/1/2022, Ferhat, Hatay, 100.00
-                """
-    st.code(example_code,language='text')
+    
+    st.write(pd.DataFrame({
+     'first column': ['Date','Field1' , 'Field2', 'Value'],
+     'second column': ['2/2/2022', 'Ferhat', 'Hatay', 100.00],
+    }))
 
     if uploaded_file is not None:
         data_file=uploaded_file
