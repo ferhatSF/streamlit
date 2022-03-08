@@ -33,7 +33,7 @@ with c30:
         help="To activate 'wide mode', go to the hamburger menu > Settings > turn on 'wide mode'",
     )
     st.info(
-         f"""
+                f"""
                 👆 Upload your own .csv file.
                 The CSV file should include one date field with 'Date' in the name amd one value field with all numeric values.
                 """
