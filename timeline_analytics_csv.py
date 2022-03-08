@@ -34,11 +34,9 @@ with c30:
     )
     st.info(
          f"""
-                👆 Upload your own .csv file. Sample data set shown: [Sample_Timeline.csv](https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv)
+                👆 Upload your own .csv file.
                 """
         )
-
-    file_container = st.expander("Check your Timeline data .csv")
 
     if uploaded_file is not None:
         shows = pd.read_csv(uploaded_file)
@@ -47,11 +45,13 @@ with c30:
     else:
         st.info(
              f"""
-                Sample data set shown: [Sample_Timeline.csv](https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv)
+                Sample data set: [Sample_Timeline.csv](https://raw.githubusercontent.com/ferhatSF/sample-data/5e641880a6767affc2798aa9be7cd99c5739d247/sample_timeline.csv)
                 """
             )
         shows=pd.read_csv(sample_file)
 #        st.stop()
+
+file_container = st.expander("Check your Timeline data .csv")
 
 nums=shows.select_dtypes(include=np.number).columns.tolist()
 dates = list(filter(lambda x: 'date' in x.lower(), shows.columns))
