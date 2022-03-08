@@ -40,9 +40,6 @@ with c30:
 
     if uploaded_file is not None:
         shows = pd.read_csv(uploaded_file)
-        uploaded_file.seek(0)
-        file_container.write(shows)
-        file_container = st.expander("Check your Timeline data .csv")
     else:
         st.info(
              f"""
@@ -52,6 +49,10 @@ with c30:
         shows=pd.read_csv(sample_file)
 #        st.stop()
 
+uploaded_file.seek(0)
+file_container = st.expander("Check your Timeline data .csv")
+file_container.write(shows)
+        
 nums=shows.select_dtypes(include=np.number).columns.tolist()
 dates = list(filter(lambda x: 'date' in x.lower(), shows.columns))
 no_dates = list(filter(lambda x: 'date' not in x.lower(), shows.columns))
